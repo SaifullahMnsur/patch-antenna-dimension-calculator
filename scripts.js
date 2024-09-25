@@ -26,6 +26,7 @@ document.getElementById('antennaForm').addEventListener('submit', function(event
             
             // Calculate width
             W = c / (2 * f_r * Math.sqrt((ε_r + 1) / 2));
+            console.log("Width: " + W);
 
             // Calculate effective dielectric constant
             ε_eff = (ε_r + 1) / 2 + ((ε_r - 1) / 2) * (1 / Math.sqrt(1 + 12 * h / W));
@@ -39,7 +40,6 @@ document.getElementById('antennaForm').addEventListener('submit', function(event
             // Calculate actual length
             L = L_eff - 2 * delta_L;
 
-            console.log("Width: " + W);
             console.log("Length: " + L);
 
             break;
@@ -167,6 +167,7 @@ function convertToHertz(value, unit) {
         case 'kHz': return value * 1e3;
         case 'MHz': return value * 1e6;
         case 'GHz': return value * 1e9;
+        case 'THz': return value * 1e12;
         default: return value;
     }
 }
