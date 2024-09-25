@@ -19,7 +19,7 @@
                 <option value="triangular">Triangular</option>
             </select>
             
-            <label for="dielectricConstant">Dielectric Constant (εr):</label>
+            <label for="dielectricConstant">Dielectric Constant (<i>ε<sub>r</sub></i>):</label>
             <input type="number" id="dielectricConstant" step="0.01" required>
             
             <label for="thickness">Substrate Thickness (h):</label>
@@ -34,7 +34,7 @@
                 </select>
             </div>
 
-            <label for="frequency">Operating Frequency (fr):</label>
+            <label for="frequency">Operating Frequency (<i>f<sub>r</sub></i>):</label>
             <div class="input-group">
                 <input type="number|fraction" id="frequency" step="1" required>
                 <select id="frequencyUnit">
@@ -50,7 +50,7 @@
         </form>
 
         <div id="results" class="hidden">
-            <h2>Step-by-Step Calculation</h2>
+            <h2><b>Answer & Equations</b></h2>
             <div id="step1"></div>
             <div id="step2"></div>
             <div id="step3"></div>

@@ -46,7 +46,7 @@ document.getElementById('antennaForm').addEventListener('submit', function(event
         case 'circular':
             const F = 8.791e9 / (f_r * Math.sqrt(ε_r)) * 10;
             console.log(`F = ${F}`);
-            a = F / Math.sqrt(1 + (2 * h) / (Math.PI * ε_r * F) * Math.log((Math.PI*F) / (2*h) + 1.7726)) / 1000
+            a = F / Math.sqrt(1 + (2 * h) / (Math.PI * ε_r * F) * (Math.log((Math.PI*F) / (2*h)) + 1.7726)) / 1000
 
             console.log(`a = ${a}`);
 
@@ -103,7 +103,7 @@ function displayResults(W, L, a, b, S, shape, hUnit, frequencyUnit) {
             document.getElementById('step3').innerHTML = `
                 <p><strong>Equations:</strong></p>
                 <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$<b>F will be in cm, multiply with 10 to convert to mm (no need to convert to m)\n</b></p>
-                <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \\ln{\\left(\\frac{\\pi F}{2h} + 1.7726\\right)}}}$$</p>
+                <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \[ln{\\left(\\frac{\\pi F}{2h}\\right) + 1.7726]}}}$$</p>
                 <p><b>a is in mm</b><p>
             `;
             break;
