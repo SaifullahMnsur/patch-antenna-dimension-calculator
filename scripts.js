@@ -46,17 +46,8 @@ document.getElementById('antennaForm').addEventListener('submit', function(event
         case 'circular':
             const F = 8.791e9 / (f_r * Math.sqrt(ε_r));
             console.log(`F = ${F}`);
-            
-            const log_part = Math.log((Math.PI / (2 * h) + 1.7726));
-            console.log(`Log part = ${log_part}`);
-            
-            const no_root_denom = 1 + (2 * h / (Math.PI * ε_r * F)) * log_part;
-            console.log(`No root Denominator = ${no_root_denom}`);
+            a = F / Math.sqrt(1 + (2 * h) / (Math.PI * ε_r * F) * Math.log((Math.PI*F) / (2*h) + 1.7726))
 
-            const root_denom = Math.sqrt(no_root_denom);
-            console.log(`Root denominator = ${root_denom}`);
-
-            a = F / root_denom;
             console.log(`a = ${a}`);
 
             break;
@@ -112,7 +103,7 @@ function displayResults(W, L, a, b, S, shape, hUnit, frequencyUnit) {
             document.getElementById('step3').innerHTML = `
                 <p><strong>Equations:</strong></p>
                 <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$</p>
-                <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \\ln{\\left(\\frac{\\pi}{2h} + 1.7726\\right)}}}$$</p>
+                <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \\ln{\\left(\\frac{\\pi F}{2h} + 1.7726\\right)}}}$$</p>
             `;
             break;
         case 'elliptical':
