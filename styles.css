@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    margin: 10px 0;
+}
+
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+p, ul {
+    font-size: 1.1em;
+}
+
+.math {
+    font-style: italic;
+    color: #555;
+}
+
+.result {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* New styles for input groups */
+.input-group {
+    display: flex;
+    width: 100%;
+}
+
+.input-group input {
+    flex: 7; /* 70% of the width */
+}
+
+.input-group select {
+    flex: 3; /* 30% of the width */
+}

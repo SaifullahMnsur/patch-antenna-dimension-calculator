@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microstrip Patch Antenna Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Microstrip Patch Antenna Dimension Calculator</h1>
+        <form id="antennaForm">
+            <label for="shape">Select Shape:</label>
+            <select id="shape" required>
+                <option value="">--Select Shape--</option>
+                <option value="rectangular">Rectangular</option>
+                <option value="circular">Circular</option>
+                <option value="elliptical">Elliptical</option>
+                <option value="triangular">Triangular</option>
+            </select>
+            
+            <label for="dielectricConstant">Dielectric Constant (εr):</label>
+            <input type="number" id="dielectricConstant" step="0.01" required>
+            
+            <label for="thickness">Substrate Thickness (h):</label>
+            <div class="input-group">
+                <input type="number|fraction" id="thickness" step="0.0001" required>
+                <select id="thicknessUnit">
+                    <option value="m">Meters</option>
+                    <option value="mm">Millimeters</option>
+                    <option value="µm">Micrometers</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="in">Inches</option>
+                </select>
+            </div>
+
+            <label for="frequency">Operating Frequency (fr):</label>
+            <div class="input-group">
+                <input type="number|fraction" id="frequency" step="1" required>
+                <select id="frequencyUnit">
+                    <option value="Hz">Hertz (Hz)</option>
+                    <option value="kHz">Kilohertz (kHz)</option>
+                    <option value="MHz">Megahertz (MHz)</option>
+                    <option value="GHz">Gigahertz (GHz)</option>
+                    <option value="THz">Terahertz (THz)</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="results" class="hidden">
+            <h2>Step-by-Step Calculation</h2>
+            <div id="step1"></div>
+            <div id="step2"></div>
+            <div id="step3"></div>
+            <div id="step4"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
