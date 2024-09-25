@@ -44,9 +44,9 @@ document.getElementById('antennaForm').addEventListener('submit', function(event
 
             break;
         case 'circular':
-            const F = 8.791e9 / (f_r * Math.sqrt(ε_r));
+            const F = 8.791e9 / (f_r * Math.sqrt(ε_r)) * 10;
             console.log(`F = ${F}`);
-            a = F / Math.sqrt(1 + (2 * h) / (Math.PI * ε_r * F) * Math.log((Math.PI*F) / (2*h) + 1.7726))
+            a = F / Math.sqrt(1 + (2 * h) / (Math.PI * ε_r * F) * Math.log((Math.PI*F) / (2*h) + 1.7726)) / 1000
 
             console.log(`a = ${a}`);
 
@@ -102,17 +102,19 @@ function displayResults(W, L, a, b, S, shape, hUnit, frequencyUnit) {
             document.getElementById('step1').innerHTML = `<p><strong>Radius (a):</strong> ${a_display.toFixed(4)} ${hUnit}</p>`;
             document.getElementById('step3').innerHTML = `
                 <p><strong>Equations:</strong></p>
-                <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$</p>
+                <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$<b>F will be in cm, multiply with 10 to convert to mm (no need to convert to m)\n</b></p>
                 <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \\ln{\\left(\\frac{\\pi F}{2h} + 1.7726\\right)}}}$$</p>
+                <p><b>a is in mm</b><p>
             `;
             break;
         case 'elliptical':
-            document.getElementById('step1').innerHTML = `<p><strong>Semi-Major Axis (a):</strong> ${a_display.toFixed(4)} ${hUnit}</p>`;
-            document.getElementById('step2').innerHTML = `<p><strong>Semi-Minor Axis (b):</strong> ${b_display.toFixed(4)} ${hUnit}</p>`;
-            document.getElementById('step3').innerHTML = `
-                <p><strong>Equation:</strong></p>
-                <p>For Elliptical Patch: $$a = \\frac{c}{2 f_r \\sqrt{\\varepsilon_{eff}}}$$</p>
-            `;
+            // document.getElementById('step1').innerHTML = `<p><strong>Semi-Major Axis (a):</strong> ${a_display.toFixed(4)} ${hUnit}</p>`;
+            // document.getElementById('step2').innerHTML = `<p><strong>Semi-Minor Axis (b):</strong> ${b_display.toFixed(4)} ${hUnit}</p>`;
+            // document.getElementById('step3').innerHTML = `
+            //     <p><strong>Equation:</strong></p>
+            //     <p>For Elliptical Patch: $$a = \\frac{c}{2 f_r \\sqrt{\\varepsilon_{eff}}}$$</p>
+            // `;
+            document.getElementById('step1').innerHTML = `<p><b>Equation for elliptical patch is yet not confirmed!</b></p>`;
             break;
         case 'triangular':
             document.getElementById('step1').innerHTML = `<p><strong>Side Length (S):</strong> ${S_display.toFixed(4)} ${hUnit}</p>`;

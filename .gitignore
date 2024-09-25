@@ -1,2 +1,6 @@
 /test
 /.vscode
+/public
+/.firebaserc
+/.firebase
+firebase.json
