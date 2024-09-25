@@ -112,7 +112,7 @@ function displayResults(W, L, a, b, S, shape, hUnit, frequencyUnit) {
             document.getElementById('step3').innerHTML = `
                 <p><strong>Equations:</strong></p>
                 <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$</p>
-                <p>Effective Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \\ln{\\left(\\frac{\\pi}{2h} + 1.7726\\right)}}}$$</p>
+                <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \\ln{\\left(\\frac{\\pi}{2h} + 1.7726\\right)}}}$$</p>
             `;
             break;
         case 'elliptical':
