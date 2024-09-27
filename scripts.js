@@ -94,17 +94,17 @@ function displayResults(W, L, a, b, S, shape, hUnit, frequencyUnit) {
             document.getElementById('step3').innerHTML = `
                 <p><strong>Equations:</strong></p>
                 <p>Width: $$W = \\frac{c}{2 f_r \\sqrt{\\frac{\\varepsilon_r + 1}{2}}}$$</p>
-                <p>Effective Dielectric Constant: $$\\varepsilon_{eff} = \\frac{\\varepsilon_r + 1}{2} + \\frac{\\varepsilon_r - 1}{2} \\left(1 + \\frac{12h}{W}\\right)^{-0.5}$$</p>
-                <p>Length: $$L = L_{eff} - 2 \\Delta L$$ where $$\\Delta L = 0.412h \\cdot \\frac{(\\varepsilon_{eff} + 0.3)(W/h + 0.264)}{(\\varepsilon_{eff} - 0.258)(W/h + 0.8)}$$</p>
+                <p>Effective Dielectric Constant: $$\\varepsilon_{eff} = \\frac{\\varepsilon_r + 1}{2} + \\frac{\\varepsilon_r - 1}{2} \\left(1 + 12\\cdot \\frac{h}{W}\\right)^{-\\frac{1}{2}}$$</p>
+                <p>Length: $$L = L_{eff} - 2 \\Delta L$$ where $$\\Delta L = 0.412h \\cdot \\frac{(\\varepsilon_{eff} + 0.3)(\\frac{W}{h} + 0.264)}{(\\varepsilon_{eff} - 0.258)(\\frac{W}{h} + 0.8)}$$</p>
             `;
             break;
         case 'circular':
             document.getElementById('step1').innerHTML = `<p><strong>Radius (a):</strong> ${a_display.toFixed(4)} ${hUnit}</p>`;
             document.getElementById('step3').innerHTML = `
                 <p><strong>Equations:</strong></p>
-                <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$<b>F will be in cm, multiply with 10 to convert to mm (no need to convert to m)\n</b></p>
-                <p>Physical Radius: $$a = \\frac{F}{\\sqrt{1 + \\frac{2h}{\\pi \\varepsilon_r F} \[ln{\\left(\\frac{\\pi F}{2h}\\right) + 1.7726]}}}$$</p>
-                <p><b>a is in mm</b><p>
+                <p>For Circular Patch: $$F = \\frac{8.791 \\times 10^9}{f_r \\sqrt{\\varepsilon_r}}$$<b>\\( F \\)</b> will be in cm, multiply with 10 to convert to mm (no need to convert to m)\n</p>
+                <p>Physical Radius: $$a = \\frac{F}{({1 + \\frac{2h}{\\pi \\varepsilon_r F} \[ln{\\left(\\frac{\\pi F}{2h}\\right) + 1.7726]})^{\\frac{1}{2}}}}$$</p>
+                <p><b>\\( a \\)</b> is in mm<p>
             `;
             break;
         case 'elliptical':
