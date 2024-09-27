@@ -20,10 +20,10 @@
                 <option value="triangular">Triangular</option>
             </select>
             
-            <label for="dielectricConstant">Dielectric Constant (<i>ε<sub>r</sub></i>):</label>
+            <label for="dielectricConstant">Dielectric Constant (\( ε_r \)):</label>
             <input type="number" id="dielectricConstant" step="0.01" required>
             
-            <label for="thickness">Substrate Thickness (h):</label>
+            <label for="thickness">Substrate Thickness (\( h \)):</label>
             <div class="input-group">
                 <input type="number|fraction" id="thickness" step="0.0001" required>
                 <select id="thicknessUnit">
@@ -35,7 +35,7 @@
                 </select>
             </div>
 
-            <label for="frequency">Operating Frequency (<i>f<sub>r</sub></i>):</label>
+            <label for="frequency">Operating Frequency (\( f_r \)):</label>
             <div class="input-group">
                 <input type="number|fraction" id="frequency" step="1" required>
                 <select id="frequencyUnit">
@@ -58,6 +58,10 @@
             <div id="step4"></div>
         </div>
     </div>
+
+    <footer>
+        <p><a href="https://github.com/SaifullahMnsur/" target="_blank">&copy; SaifullahMnsur</a></p>
+    </footer>
 
     <script src="scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=es6"></script>
