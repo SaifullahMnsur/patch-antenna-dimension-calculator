@@ -17,7 +17,7 @@ This project is a microstrip patch antenna dimension calculator. It allows users
 
 You can use this project directly online through the GitHub static page:
 
-- Visit: [https://github.com/SaifullahMnsur/patch-antenna-dimension-calculator](https://github.com/SaifullahMnsur/patch-antenna-dimension-calculator)
+- Visit: [https://saifullahmnsur.github.io/patch-antenna-dimension-calculator/](https://saifullahmnsur.github.io/patch-antenna-dimension-calculator/)
 
 
 ### 2. Firebase Usage
